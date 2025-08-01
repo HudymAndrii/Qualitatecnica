@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <title>Visualizzatore Interruzioni</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+
+<h1>Visualizzatore Interruzioni</h1>
+<input type="file" id="fileInput" accept=".txt,.csv" />
+<button id="caricaBtn">Carica e Genera</button>
+
+
+
+
+<section>
+  <h2 onclick="toggle('csvBox')">▶ Testo CSV Formattato</h2>
+  <div class="content" id="csvBox">
+    <textarea id="contenutoCSV" readonly></textarea>
+  </div>
+
+</section>
+
+<section>
+  <h2 onclick="toggle('tabella1')">▶ Tabella Interruzioni (Tutte)</h2>
+  <div class="content" id="tabella1">
+    <label>Dal: <input type="date" id="dataInizioFiltroTutte"></label>
+    <label>Al: <input type="date" id="dataFineFiltroTutte"></label>
+    <button id="btnFiltroTutte">Filtra</button>
+    <table id="datiTabella">
+      <thead>
+        <tr>
+          <th>Inizio</th><th>Fine</th><th>Fasi</th><th>Eneltel</th>
+          <th>N. Fasi</th><th>Durata (min)</th><th>Tipologia</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2 onclick="toggle('tabella2')">▶ Interruzione Grafico (Durata > 1 min)</h2>
+  <div class="content" id="tabella2">
+    <label>Dal: <input type="date" id="dataInizioFiltro"></label>
+    <label>Al: <input type="date" id="dataFineFiltro"></label>
+    <button id="btnFiltroPeriodo">Filtra</button>
+    <table id="tabellaGrafico">
+      <thead>
+        <tr>
+          <th>Inizio</th><th>Fine</th><th>Fasi</th><th>Eneltel</th><th>#Eneltel</th><th>N. Fasi</th><th>Durata (min)</th><th>Tipologia</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2 onclick="toggle('graficoBox')">▶ Grafico Interruzioni</h2>
+  <div class="content" id="graficoBox">
+    <button id="btnGrafico">Genera Grafico</button>
+    <div id="chart-container"></div>
+  </div>
+</section>
+
+<section>
+  <h2 onclick="toggle('tabellaUnificataBox')">▶ Interruzioni Raggruppate (±1 minuto)</h2>
+  <div class="content" id="tabellaUnificataBox">
+    <label>Dal: <input type="date" id="dataInizioFiltroRaggruppate"></label>
+    <label>Al: <input type="date" id="dataFineFiltroRaggruppate"></label>
+    <button id="btnFiltroRaggruppate">Filtra</button>
+    <table id="tabellaUnificata">
+      <thead>
+        <tr>
+          <th>Inizio</th><th>Fine</th><th>Fasi</th><th>Eneltel</th><th>N. Fasi</th><th>Durata (min)</th><th>Tipologia</th><th class="percentuale">Clienti (%)</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2 onclick="toggle('graficoRaggruppateBox')">▶ Grafico Interruzioni Raggruppate</h2>
+  <div class="content" id="graficoRaggruppateBox">
+    <button id="btnGraficoRaggruppate">Genera Grafico</button>
+    <div id="chart-container-raggruppate"></div>
+  </div>
+</section>
+
+<!-- JavaScript modularizzato -->
+<script type="module" src="js/main.js" defer></script>
+
+
+</body>
+</html>
+
