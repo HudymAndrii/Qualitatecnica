@@ -68,11 +68,13 @@ th.percentuale, td.percentuale {
   text-align: center;      /* (Opzionale) Centra il testo */
 }
 
-/* Nasconde le due sezioni per intero */
+/* Rimuove anche i contenitori vuoti che restano */
 [onclick="toggle('tabella2')"],
 [onclick="toggle('tabella2')"] + #tabella2,
 [onclick="toggle('graficoBox')"],
-[onclick="toggle('graficoBox')"] + #graficoBox {
+[onclick="toggle('graficoBox')"] + #graficoBox,
+[onclick="toggle('tabella2')"] + #tabella2 + *,
+[onclick="toggle('graficoBox')"] + #graficoBox + * {
     display: none !important;
 }
 
