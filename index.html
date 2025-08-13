@@ -10,7 +10,7 @@
 <body>
 
 <h1>Visualizzatore Interruzioni</h1>
-<input type="file" id="fileInput" accept=".txt,.csv" />
+<input type="file" id="fileInput" />
 <button id="caricaBtn">Carica e Genera</button>
 
 
@@ -39,31 +39,6 @@
       </thead>
       <tbody></tbody>
     </table>
-  </div>
-</section>
-
-<section>
-  <h2 onclick="toggle('tabella2')">▶ Interruzione Grafico (Durata > 1 min)</h2>
-  <div class="content" id="tabella2">
-    <label>Dal: <input type="date" id="dataInizioFiltro"></label>
-    <label>Al: <input type="date" id="dataFineFiltro"></label>
-    <button id="btnFiltroPeriodo">Filtra</button>
-    <table id="tabellaGrafico">
-      <thead>
-        <tr>
-          <th>Inizio</th><th>Fine</th><th>Fasi</th><th>Eneltel</th><th>#Eneltel</th><th>N. Fasi</th><th>Durata (min)</th><th>Tipologia</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-  </div>
-</section>
-
-<section>
-  <h2 onclick="toggle('graficoBox')">▶ Grafico Interruzioni</h2>
-  <div class="content" id="graficoBox">
-    <button id="btnGrafico">Genera Grafico</button>
-    <div id="chart-container"></div>
   </div>
 </section>
 
@@ -98,4 +73,5 @@
 
 </body>
 </html>
+
 
