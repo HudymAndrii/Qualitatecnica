@@ -68,13 +68,29 @@ th.percentuale, td.percentuale {
   text-align: center;      /* (Opzionale) Centra il testo */
 }
 
-/* Rimuove anche i contenitori vuoti che restano */
-[onclick="toggle('tabella2')"],
-[onclick="toggle('tabella2')"] + #tabella2,
-[onclick="toggle('graficoBox')"],
-[onclick="toggle('graficoBox')"] + #graficoBox,
-[onclick="toggle('tabella2')"] + #tabella2 + *,
-[onclick="toggle('graficoBox')"] + #graficoBox + * {
+/* Nasconde direttamente tutta la sezione (contenitore + titolo + contenuto) */
+h2[onclick="toggle('tabella2')"],
+h2[onclick="toggle('graficoBox')"] {
+    display: none !important;
+}
+
+h2[onclick="toggle('tabella2')"]::before,
+h2[onclick="toggle('graficoBox')"]::before {
+    content: none;
+}
+
+/* Nasconde anche il contenitore .box che contiene quelle sezioni */
+h2[onclick="toggle('tabella2')"],
+h2[onclick="toggle('graficoBox')"] {
+    display: none !important;
+}
+h2[onclick="toggle('tabella2')"],
+h2[onclick="toggle('graficoBox')"] {
+    display: none !important;
+}
+
+h2[onclick="toggle('tabella2')"],
+h2[onclick="toggle('graficoBox')"] {
     display: none !important;
 }
 
