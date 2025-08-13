@@ -67,3 +67,13 @@ th.percentuale, td.percentuale {
   white-space: nowrap;     /* Impedisce il testo di andare a capo */
   text-align: center;      /* (Opzionale) Centra il testo */
 }
+
+/* Nasconde "Interruzione Grafico (Durata > 1 min)" e "Grafico Interruzioni" */
+[onclick="toggle('tabella2')"],
+#tabella2,
+[onclick="toggle('graficoBox')"],
+#graficoBox {
+  display: none !important;
+}
+
+
