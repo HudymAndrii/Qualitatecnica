@@ -43,31 +43,6 @@
 </section>
 
 <section>
-  <h2 onclick="toggle('tabella2')">▶ Interruzione Grafico (Durata > 1 min)</h2>
-  <div class="content" id="tabella2">
-    <label>Dal: <input type="date" id="dataInizioFiltro"></label>
-    <label>Al: <input type="date" id="dataFineFiltro"></label>
-    <button id="btnFiltroPeriodo">Filtra</button>
-    <table id="tabellaGrafico">
-      <thead>
-        <tr>
-          <th>Inizio</th><th>Fine</th><th>Fasi</th><th>Eneltel</th><th>#Eneltel</th><th>N. Fasi</th><th>Durata (min)</th><th>Tipologia</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-  </div>
-</section>
-
-<section>
-  <h2 onclick="toggle('graficoBox')">▶ Grafico Interruzioni</h2>
-  <div class="content" id="graficoBox">
-    <button id="btnGrafico">Genera Grafico</button>
-    <div id="chart-container"></div>
-  </div>
-</section>
-
-<section>
   <h2 onclick="toggle('tabellaUnificataBox')">▶ Interruzioni Raggruppate (±1 minuto)</h2>
   <div class="content" id="tabellaUnificataBox">
     <label>Dal: <input type="date" id="dataInizioFiltroRaggruppate"></label>
@@ -92,10 +67,37 @@
   </div>
 </section>
 
+
+  <section>
+  <h2 onclick="toggle('tabella2')">▶ Interruzione Grafico (Durata > 1 min)</h2>
+  <div class="content" id="tabella2">
+    <label>Dal: <input type="date" id="dataInizioFiltro"></label>
+    <label>Al: <input type="date" id="dataFineFiltro"></label>
+    <button id="btnFiltroPeriodo">Filtra</button>
+    <table id="tabellaGrafico">
+      <thead>
+        <tr>
+          <th>Inizio</th><th>Fine</th><th>Fasi</th><th>Eneltel</th><th>#Eneltel</th><th>N. Fasi</th><th>Durata (min)</th><th>Tipologia</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2 onclick="toggle('graficoBox')">▶ Grafico Interruzioni</h2>
+  <div class="content" id="graficoBox">
+    <button id="btnGrafico">Genera Grafico</button>
+    <div id="chart-container"></div>
+  </div>
+</section>
+  
 <!-- JavaScript modularizzato -->
 <script type="module" src="js/main.js" defer></script>
 
 
 </body>
 </html>
+
 
