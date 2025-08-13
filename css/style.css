@@ -68,12 +68,13 @@ th.percentuale, td.percentuale {
   text-align: center;      /* (Opzionale) Centra il testo */
 }
 
-/* Nasconde "Interruzione Grafico (Durata > 1 min)" e "Grafico Interruzioni" */
+/* Nasconde le due sezioni per intero */
 [onclick="toggle('tabella2')"],
-#tabella2,
+[onclick="toggle('tabella2')"] + #tabella2,
 [onclick="toggle('graficoBox')"],
-#graficoBox {
-  display: none !important;
+[onclick="toggle('graficoBox')"] + #graficoBox {
+    display: none !important;
 }
+
 
 
